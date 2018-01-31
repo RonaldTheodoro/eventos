@@ -1,0 +1,5 @@
+dao\UsuarioDAO.class
+model\Usuario.class
+utils\ConexaoDB.class
+model\UsuarioEvento.class
+model\Evento.class
