@@ -6,8 +6,6 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -15,39 +13,40 @@ import javax.persistence.OneToMany;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private String email;
 	@Column(name = "nome")
 	private String nome;
+	
 	@Column(name = "endereco")
 	private String endereco;
-	@Column(name = "email")
-	private String email;
+	
+	@Column(name = "curso")
+	private String curso;
+	
+	@Column(name = "semestre")
+	private Integer semestre;
+	
+	@Column(name = "turno")
+	private String turno;
+	
 	@Column(name = "senha")
 	private String senha;
+	
 	@Column(name = "adm")
 	private boolean adm;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<UsuarioEvento> usuarioEventos;
 	
 	public Usuario () {}
 	
-	public Usuario(Integer id, String nome, String endereco, String email, String senha, boolean adm) {
-		this.id = id;
+	public Usuario(String nome, String endereco, String email, String senha, boolean adm) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.email = email;
 		this.senha = senha;
 		this.adm = adm;
 		this.usuarioEventos = new HashSet<>();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getNome() {
@@ -96,6 +95,30 @@ public class Usuario {
 
 	public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
 		this.usuarioEventos = usuarioEventos;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	public Integer getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
 	}
 
 }

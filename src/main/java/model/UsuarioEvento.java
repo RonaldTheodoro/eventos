@@ -13,9 +13,13 @@ import javax.persistence.Table;
 @Table(name = "usuario_has_evento")
 public class UsuarioEvento implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3075483837873936308L;
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "usuario_email")
 	private Usuario usuario;
 	@Id
     @ManyToOne
