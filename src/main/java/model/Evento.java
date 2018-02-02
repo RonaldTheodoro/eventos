@@ -1,18 +1,38 @@
 package model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Evento {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Column(name = "categoria")
 	private String categoria;
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "descricao")
 	private String descricao;
+	@Column(name = "nome_Palestrante")
 	private String nomePalestrante;
+	@Column(name = "carga_Horaria")
 	private Double cargaHoraria;
+	@Column(name = "data_Evento")
 	private String dataEvento;
+	@Column(name = "local")
 	private String local;
-	private List<Usuario> participantes;
+	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+	private Set<UsuarioEvento> usuarioEventos;
 	
 	public Evento () {}
 	
@@ -23,6 +43,7 @@ public class Evento {
 		this.descricao = descricao;
 		this.nomePalestrante = nomePalestrante;
 		this.cargaHoraria = cargaHoraria;
+		this.usuarioEventos = new HashSet<>();
 	}
 
 	public Integer getId() {
@@ -73,14 +94,6 @@ public class Evento {
 		this.cargaHoraria = cargaHoraria;
 	}
 
-	public List<Usuario> getParticipantes() {
-		return participantes;
-	}
-
-	public void setParticipantes(List<Usuario> participantes) {
-		this.participantes = participantes;
-	}
-
 	public String getDataEvento() {
 		return dataEvento;
 	}
@@ -101,4 +114,13 @@ public class Evento {
 	public String toString() {
 		return this.id + " - " + this.nome;
 	}
+
+	public Set<UsuarioEvento> getUsuarioEventos() {
+		return usuarioEventos;
+	}
+
+	public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
+		this.usuarioEventos = usuarioEventos;
+	}
+
 }

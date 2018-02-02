@@ -1,16 +1,34 @@
 package model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Usuario {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "endereco")
 	private String endereco;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "senha")
 	private String senha;
+	@Column(name = "adm")
 	private boolean adm;
-	private List<Evento> eventos;
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private Set<UsuarioEvento> usuarioEventos;
 	
 	public Usuario () {}
 	
@@ -21,6 +39,7 @@ public class Usuario {
 		this.email = email;
 		this.senha = senha;
 		this.adm = adm;
+		this.usuarioEventos = new HashSet<>();
 	}
 
 	public Integer getId() {
@@ -71,12 +90,12 @@ public class Usuario {
 		this.adm = adm;
 	}
 
-	public List<Evento> getEventos() {
-		return eventos;
+	public Set<UsuarioEvento> getUsuarioEventos() {
+		return usuarioEventos;
 	}
 
-	public void setEventos(List<Evento> eventos) {
-		this.eventos = eventos;
+	public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
+		this.usuarioEventos = usuarioEventos;
 	}
-	
+
 }
