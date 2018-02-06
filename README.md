@@ -1,5 +1,4 @@
 # Fatec Zona Sul Eventos
 
 
-Aplicação web para o controle de presença no eventos da semmana de tecnologia da fatec
-
+Aplicação web para o controle de presença nos eventos da semana de tecnologia da fatec
