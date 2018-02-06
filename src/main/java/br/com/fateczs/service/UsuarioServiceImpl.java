@@ -9,7 +9,7 @@ import br.com.fateczs.model.Usuario;
 import br.com.fateczs.repository.UsuarioRepository;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService {
+public class UsuarioServiceImpl implements IService<Usuario> {
 
     @Autowired
     private UsuarioRepository repository;
