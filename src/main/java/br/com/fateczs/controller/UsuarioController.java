@@ -1,8 +1,8 @@
-package controller;
+package br.com.fateczs.controller;
 
 import java.util.List;
 
-import model.Usuario;
+import br.com.fateczs.model.Usuario;
 
 public interface UsuarioController {
 

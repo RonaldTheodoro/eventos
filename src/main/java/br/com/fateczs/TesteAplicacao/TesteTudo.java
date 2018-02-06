@@ -1,4 +1,4 @@
-package TesteAplicacao;
+package br.com.fateczs.TesteAplicacao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import controller.UsuarioController;
-import model.Usuario;
+import br.com.fateczs.controller.UsuarioController;
+import br.com.fateczs.model.Usuario;
 
 @SpringBootApplication
 @Configuration

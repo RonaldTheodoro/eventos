@@ -1,8 +1,8 @@
-package service;
+package br.com.fateczs.service;
 
 import java.util.List;
 
-import model.Usuario;
+import br.com.fateczs.model.Usuario;
 
 public interface UsuarioService {
 

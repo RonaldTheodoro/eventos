@@ -1,4 +1,4 @@
-package model;
+package br.com.fateczs.model;
 
 import java.io.Serializable;
 

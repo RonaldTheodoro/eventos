@@ -1,12 +1,12 @@
-package controller;
+package br.com.fateczs.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import model.Usuario;
-import service.UsuarioService;
+import br.com.fateczs.model.Usuario;
+import br.com.fateczs.service.UsuarioService;
 
 @Controller
 public class UsuarioControllerImpl implements UsuarioController {
