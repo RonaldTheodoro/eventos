@@ -6,16 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import br.com.fateczs.model.Usuario;
+import br.com.fateczs.service.IService;
 
 @Controller
 public class UsuarioControllerImpl implements IController<Usuario> {
 
     @Autowired
-    private UsuarioService service;
+    private IService service;
 
     @Override
     public boolean isValid(Usuario usuario) {
-        Usuario usuarioAux = service.buscar(usuario);
+        Usuario usuarioAux = (Usuario) service.buscar(usuario);
         if(usuarioAux != null) {
             if(usuario.getEmail().equalsIgnoreCase(usuarioAux.getEmail()) 
                && usuario.getSenha().equals(usuarioAux.getSenha())) {
