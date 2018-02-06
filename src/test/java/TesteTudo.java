@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import br.com.fateczs.controller.UsuarioController;
+import br.com.fateczs.controller.IController;
 import br.com.fateczs.model.Usuario;
 
 @SpringBootApplication
@@ -30,7 +30,7 @@ public class TesteTudo implements CommandLineRunner {
     }
 
     @Autowired
-    private UsuarioController cont;
+    private IController cont;
 
     @Override
     public void run (String... arg0) {
@@ -38,7 +38,7 @@ public class TesteTudo implements CommandLineRunner {
         usuario.setEmail("danielcs1993@hotmail.com");
         usuario.setSenha("115599");
 
-        boolean helper = cont.isValidUser(usuario);
+        boolean helper = cont.isValid(usuario);
         if(usuario !=null)
             System.out.println(helper);
 
