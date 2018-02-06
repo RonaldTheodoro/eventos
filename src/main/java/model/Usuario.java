@@ -11,114 +11,119 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
-	
-	@Id
-	private String email;
-	@Column(name = "nome")
-	private String nome;
-	
-	@Column(name = "endereco")
-	private String endereco;
-	
-	@Column(name = "curso")
-	private String curso;
-	
-	@Column(name = "semestre")
-	private Integer semestre;
-	
-	@Column(name = "turno")
-	private String turno;
-	
-	@Column(name = "senha")
-	private String senha;
-	
-	@Column(name = "adm")
-	private boolean adm;
-	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<UsuarioEvento> usuarioEventos;
-	
-	public Usuario () {}
-	
-	public Usuario(String nome, String endereco, String email, String senha, boolean adm) {
-		this.nome = nome;
-		this.endereco = endereco;
-		this.email = email;
-		this.senha = senha;
-		this.adm = adm;
-		this.usuarioEventos = new HashSet<>();
-	}
 
-	public String getNome() {
-		return nome;
-	}
+    @Id
+    private String email;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Column(name = "nome")
+    private String nome;
+    
+    @Column(name = "endereco")
+    private String endereco;
+    
+    @Column(name = "curso")
+    private String curso;
+    
+    @Column(name = "semestre")
+    private Integer semestre;
+    
+    @Column(name = "turno")
+    private String turno;
+    
+    @Column(name = "senha")
+    private String senha;
+    
+    @Column(name = "adm")
+    private boolean adm;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private Set<UsuarioEvento> usuarioEventos;
+    
+    public Usuario () { }
+    
+    public Usuario(String nome,
+                   String endereco,
+                   String email,
+                   String senha,
+                   boolean adm) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.email = email;
+        this.senha = senha;
+        this.adm = adm;
+        this.usuarioEventos = new HashSet<>();
+    }
 
-	public String getEndereco() {
-		return endereco;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEndereco() {
+        return endereco;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public boolean isAdm() {
-		return adm;
-	}
+    public String getSenha() {
+        return senha;
+    }
 
-	public void setAdm(boolean adm) {
-		this.adm = adm;
-	}
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-	public Set<UsuarioEvento> getUsuarioEventos() {
-		return usuarioEventos;
-	}
+    public boolean isAdm() {
+        return adm;
+    }
 
-	public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
-		this.usuarioEventos = usuarioEventos;
-	}
+    public void setAdm(boolean adm) {
+        this.adm = adm;
+    }
 
-	public String getCurso() {
-		return curso;
-	}
+    public Set<UsuarioEvento> getUsuarioEventos() {
+        return usuarioEventos;
+    }
 
-	public void setCurso(String curso) {
-		this.curso = curso;
-	}
+    public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
+        this.usuarioEventos = usuarioEventos;
+    }
 
-	public Integer getSemestre() {
-		return semestre;
-	}
+    public String getCurso() {
+        return curso;
+    }
 
-	public void setSemestre(Integer semestre) {
-		this.semestre = semestre;
-	}
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
 
-	public String getTurno() {
-		return turno;
-	}
+    public Integer getSemestre() {
+        return semestre;
+    }
 
-	public void setTurno(String turno) {
-		this.turno = turno;
-	}
+    public void setSemestre(Integer semestre) {
+        this.semestre = semestre;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
 
 }

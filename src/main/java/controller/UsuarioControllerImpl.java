@@ -11,39 +11,39 @@ import service.UsuarioService;
 @Controller
 public class UsuarioControllerImpl implements UsuarioController {
 
-	@Autowired
-	private UsuarioService service;
+    @Autowired
+    private UsuarioService service;
 
-	@Override
-	public boolean isValidUser(Usuario usuario) {
-		Usuario usuarioAux = service.buscar(usuario);
-		if(usuarioAux != null) {
-			if(usuario.getEmail().equalsIgnoreCase(usuarioAux.getEmail()) && usuario.getSenha().equals(usuarioAux.getSenha())) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	@Override
-	public void cadastroUsuario(Usuario usuario) {
-		service.inserir(usuario);
-	}
+    @Override
+    public boolean isValidUser(Usuario usuario) {
+        Usuario usuarioAux = service.buscar(usuario);
+        if(usuarioAux != null) {
+            if(usuario.getEmail().equalsIgnoreCase(usuarioAux.getEmail()) && usuario.getSenha().equals(usuarioAux.getSenha())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    @Override
+    public void cadastroUsuario(Usuario usuario) {
+        service.inserir(usuario);
+    }
 
-	@Override
-	public void alterarUsuario(Usuario usuario) {
-		service.alterar(usuario);
-		
-	}
+    @Override
+    public void alterarUsuario(Usuario usuario) {
+        service.alterar(usuario);
+        
+    }
 
-	@Override
-	public void excluirUsuario(Usuario usuario) {
-		service.excluir(usuario);
-	}
+    @Override
+    public void excluirUsuario(Usuario usuario) {
+        service.excluir(usuario);
+    }
 
-	@Override
-	public List<Usuario> listarUsuarios() {
-		return service.listar();
-	}
-	
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return service.listar();
+    }
+
 }

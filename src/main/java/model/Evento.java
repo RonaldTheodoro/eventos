@@ -13,114 +13,127 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Evento {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	@Column(name = "categoria")
-	private String categoria;
-	@Column(name = "nome")
-	private String nome;
-	@Column(name = "descricao")
-	private String descricao;
-	@Column(name = "nome_Palestrante")
-	private String nomePalestrante;
-	@Column(name = "carga_Horaria")
-	private Double cargaHoraria;
-	@Column(name = "data_Evento")
-	private String dataEvento;
-	@Column(name = "local")
-	private String local;
-	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
-	private Set<UsuarioEvento> usuarioEventos;
-	
-	public Evento () {}
-	
-	public Evento (Integer id, String categoria, String nome, String descricao, String nomePalestrante, Double cargaHoraria) {
-		this.id = id;
-		this.categoria = categoria;
-		this.nome = nome;
-		this.descricao = descricao;
-		this.nomePalestrante = nomePalestrante;
-		this.cargaHoraria = cargaHoraria;
-		this.usuarioEventos = new HashSet<>();
-	}
 
-	public Integer getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Column(name = "categoria")
+    private String categoria;
 
-	public String getCategoria() {
-		return categoria;
-	}
+    @Column(name = "nome")
+    private String nome;
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
+    @Column(name = "descricao")
+    private String descricao;
 
-	public String getNome() {
-		return nome;
-	}
+    @Column(name = "nome_Palestrante")
+    private String nomePalestrante;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Column(name = "carga_Horaria")
+    private Double cargaHoraria;
 
-	public String getDescricao() {
-		return descricao;
-	}
+    @Column(name = "data_Evento")
+    private String dataEvento;
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    @Column(name = "local")
+    private String local;
 
-	public String getNomePalestrante() {
-		return nomePalestrante;
-	}
+    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+    private Set<UsuarioEvento> usuarioEventos;
 
-	public void setNomePalestrante(String nomePalestrante) {
-		this.nomePalestrante = nomePalestrante;
-	}
+    public Evento () { }
 
-	public Double getCargaHoraria() {
-		return cargaHoraria;
-	}
+    public Evento (Integer id,
+                   String categoria,
+                   String nome,
+                   String descricao,
+                   String nomePalestrante,
+                   Double cargaHoraria) {
+        this.id = id;
+        this.categoria = categoria;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.nomePalestrante = nomePalestrante;
+        this.cargaHoraria = cargaHoraria;
+        this.usuarioEventos = new HashSet<>();
+    }
 
-	public void setCargaHoraria(Double cargaHoraria) {
-		this.cargaHoraria = cargaHoraria;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getDataEvento() {
-		return dataEvento;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setDataEvento(String dataEvento) {
-		this.dataEvento = dataEvento;
-	}
+    public String getCategoria() {
+        return categoria;
+    }
 
-	public String getLocal() {
-		return local;
-	}
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
-	public void setLocal(String local) {
-		this.local = local;
-	}
-	
-	@Override
-	public String toString() {
-		return this.id + " - " + this.nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public Set<UsuarioEvento> getUsuarioEventos() {
-		return usuarioEventos;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
-		this.usuarioEventos = usuarioEventos;
-	}
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getNomePalestrante() {
+        return nomePalestrante;
+    }
+
+    public void setNomePalestrante(String nomePalestrante) {
+        this.nomePalestrante = nomePalestrante;
+    }
+
+    public Double getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(Double cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public String getDataEvento() {
+        return dataEvento;
+    }
+
+    public void setDataEvento(String dataEvento) {
+        this.dataEvento = dataEvento;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    @Override
+    public String toString() {
+        return this.id + " - " + this.nome;
+    }
+
+    public Set<UsuarioEvento> getUsuarioEventos() {
+        return usuarioEventos;
+    }
+
+    public void setUsuarioEventos(Set<UsuarioEvento> usuarioEventos) {
+        this.usuarioEventos = usuarioEventos;
+    }
 
 }

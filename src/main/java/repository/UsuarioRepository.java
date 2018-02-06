@@ -5,7 +5,4 @@ import org.springframework.stereotype.Repository;
 
 import model.Usuario;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, String> {
-	
-	
-}
+public interface UsuarioRepository extends JpaRepository<Usuario, String> { }
